@@ -1,0 +1,19 @@
+#SoC 7
+task_a1 = Task(chiplet_id='A', duration=275, io=8, power=1505, task_type='scan')
+task_a2 = Task(chiplet_id='A', duration=25, io=5, power=77, task_type='mbist')
+task_a3 = Task(chiplet_id='A', duration=91, io=5, power=28, task_type='JTAG')
+task_b1 = Task(chiplet_id='B', duration=176, io=5, power=911, task_type='scan')
+task_b2 = Task(chiplet_id='B', duration=38, io=5, power=27, task_type='mbist')
+task_b3 = Task(chiplet_id='B', duration=45, io=5, power=14, task_type='JTAG')
+task_c1 = Task(chiplet_id='C', duration=287, io=17, power=1734, task_type='scan')
+task_c2 = Task(chiplet_id='C', duration=102, io=5, power=445, task_type='mbist')
+task_c3 = Task(chiplet_id='C', duration=76, io=5, power=23, task_type='JTAG')
+task_d1 = Task(chiplet_id='D', duration=156, io=7, power=1137, task_type='scan')
+task_d2 = Task(chiplet_id='D', duration=13, io=5, power=47, task_type='mbist')
+task_d3 = Task(chiplet_id='D', duration=55, io=5, power=17, task_type='JTAG')
+mutex = ['B', 'C']  # The mutually exclusive list can be customized and is allowed to be empty.
+chiplet_a = Chiplet(chiplet_id='A', tasks=[task_a1, task_a2, task_a3])
+chiplet_b = Chiplet(chiplet_id='B', tasks=[task_b1, task_b2, task_b3])
+chiplet_c = Chiplet(chiplet_id='C', tasks=[task_c1, task_c2, task_c3])
+chiplet_d = Chiplet(chiplet_id='D', tasks=[task_d1, task_d2, task_d3])
+chiplet_based_SoC = [chiplet_a, chiplet_b, chiplet_c, chiplet_d]
